@@ -28,10 +28,10 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/main" element={<Main title="메인 페이지" />} />
         <Route
           path="/introduce"
-          element={<IntroduceSite sites={sites} title="All Sites" />}
+          element={<IntroduceSite sites={sites} title="사이트 소개" />}
         />
         {Object.keys(sites).map((category) => {
           console.log("Category Route:", category);

@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
 import sitesData from "../../data/sites.json"; // JSON 파일 import
 
-const Main = () => {
+const Main = ({ title }) => {
   const [scrollable, setScrollable] = useState({});
   const scrollRefs = useRef({});
 
@@ -47,7 +47,7 @@ const Main = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">메인 페이지</h1>
+      <h1 className="text-3xl font-bold mb-6">{title}</h1>
       <div>
         <h2 className="text-2xl font-semibold mb-4">가장 많이 사용한 사이트</h2>
         <div className="relative group">
