@@ -29,7 +29,7 @@ const Sidebar = () => {
   }, [open]);
 
   const isActiveLink = (path) => {
-    return location.pathname.startsWith(path) ? "active" : "";
+    return location.pathname === path ? "active" : "";
   };
 
   return (
