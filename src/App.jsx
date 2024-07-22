@@ -5,14 +5,14 @@ import Home from "./components/Page/Home";
 import Main from "./components/Page/Main";
 import IntroduceSite from "./components/Page/IntroduceSite";
 import DetailPage from "./components/Page/DetailPage";
-import sitesData from "./data/sites.json"; // JSON 파일 import
+import DetailSite from "./components/Page/DetailSite";
+import sitesData from "./data/sites.json";
 import Permanent from "./components/Page/Permanent";
 
 function App() {
   const [sites, setSites] = useState({});
 
   useEffect(() => {
-    // JSON 파일에서 데이터를 가져옵니다.
     const fetchSites = async () => {
       try {
         setSites(sitesData);
@@ -33,18 +33,23 @@ function App() {
           path="/introduce"
           element={<IntroduceSite sites={sites} title="사이트 소개" />}
         />
-        {Object.keys(sites).map((category) => {
-          console.log("Category Route:", category);
-          return (
+        {Object.keys(sites).map((category) => (
+          <Route
+            key={category}
+            path={`/introduce/:category`}
+            element={<DetailPage sites={sites} />}
+          />
+        ))}
+        {Object.keys(sites).map((category) =>
+          sites[category].sites.map((site) => (
             <Route
-              key={category}
-              path={`/introduce/:category`}
-              element={<DetailPage sites={sites} />}
+              key={site.name}
+              path={`/introduce/:category/:siteName`}
+              element={<DetailSite sites={sites} />}
             />
-          );
-        })}
+          ))
+        )}
         <Route path="/permanent" element={<Permanent />} />
-        {/* 다른 경로들 추가 */}
       </Routes>
     </Layout>
   );

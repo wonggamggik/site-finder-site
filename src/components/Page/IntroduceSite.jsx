@@ -37,7 +37,7 @@ const IntroduceSite = ({ sites, title }) => {
   const scroll = (category, direction) => {
     const ref = scrollRefs.current[category];
     if (ref) {
-      const scrollAmount = 2 * 320; // Assuming each card is 320px wide including margin
+      const scrollAmount = 2 * 320;
       ref.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -60,14 +60,14 @@ const IntroduceSite = ({ sites, title }) => {
                   <div
                     onClick={() => scroll(category, "left")}
                     className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 bg-opacity-50 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ userSelect: "none", cursor: "pointer" }} // 드래그 방지 및 커서 설정
+                    style={{ userSelect: "none", cursor: "pointer" }}
                   >
                     &lt;
                   </div>
                   <div
                     onClick={() => scroll(category, "right")}
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 bg-opacity-50 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ userSelect: "none", cursor: "pointer" }} // 드래그 방지 및 커서 설정
+                    style={{ userSelect: "none", cursor: "pointer" }}
                   >
                     &gt;
                   </div>
@@ -78,7 +78,12 @@ const IntroduceSite = ({ sites, title }) => {
                 className="flex space-x-4 overflow-x-auto scrollbar-hide scroll-smooth"
               >
                 {sites[category].sites.map((site, idx) => (
-                  <Link to={`/introduce/${category}`} key={idx}>
+                  <Link
+                    to={`/introduce/${category}/${encodeURIComponent(
+                      site.name
+                    )}`}
+                    key={idx}
+                  >
                     <Card className="bg-[#f5f5f5] flex-none w-80">
                       <CardImage
                         src={site.image}
