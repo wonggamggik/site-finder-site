@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardImage, CardContent, CardTags } from "./Card";
+import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
 
 const IntroduceSite = ({ sites }) => {
   return (
