@@ -1,13 +1,17 @@
-// src/App.jsx
 import React from "react";
-import "./App.css";
-import Layout from "./layouts/layout";
-import Component from "./components/components";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import About from "./components/About";
 
 function App() {
   return (
     <Layout>
-      <Component />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* 다른 경로들 추가 */}
+      </Routes>
     </Layout>
   );
 }
