@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 직접 CSS 속성 정의 */
+.transition-max-height {
+  transition: max-height 0.3s ease-in-out;
+}
+
+.lw_menu_item a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #8d8d8d;
+  transition: border 0.3s ease-in-out;
+  box-sizing: border-box;
+  position: relative; /* 추가: 의사 요소를 위한 상대 위치 */
+}
+
+.lw_menu_item a:hover::before {
+  content: "";
+  display: block;
+  height: calc(100% - 4px); /* 테두리 두께를 고려하여 조정 */
+  width: calc(100% - 4px); /* 테두리 두께를 고려하여 조정 */
+  border: 3px solid #111111; /* 테두리 두께 */
+  border-radius: 0px; /* 둥근 테두리 */
+  position: absolute;
+  top: 2px; /* 테두리 두께를 고려하여 조정 */
+  left: 2px; /* 테두리 두께를 고려하여 조정 */
+  box-sizing: border-box;
+}
+
+/* .lw_menu_item a.active 스타일 제거 */
