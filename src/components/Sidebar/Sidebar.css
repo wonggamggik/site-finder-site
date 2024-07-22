@@ -37,3 +37,8 @@ aside {
   overflow-y: auto; /* 내용이 많아질 경우 스크롤 가능하게 설정 */
   user-select: none; /* 드래그 방지 */
 }
+
+/* 링크 간격 통일 */
+nav a {
+  margin-bottom: 0.5rem; /* 링크 사이의 간격을 동일하게 설정 */
+}
