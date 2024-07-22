@@ -4,8 +4,8 @@ import Layout from "./layouts/Layout";
 import Home from "./components/Page/Home";
 import Main from "./components/Page/Main";
 import IntroduceSite from "./components/Page/IntroduceSite";
-import Permanent from "./components/Page/Permanent";
 import sitesData from "./data/sites.json"; // JSON 파일 import
+import Permanent from "./components/Page/Permanent";
 
 function App() {
   const [sites, setSites] = useState({});
@@ -28,11 +28,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/main" element={<Main />} />
+        <Route
+          path="/introduce"
+          element={<IntroduceSite sites={sites} title="All Sites" />}
+        />
         {Object.keys(sites).map((category) => (
           <Route
             key={category}
             path={`/${category}`}
-            element={<IntroduceSite sites={sites[category]} title={category} />}
+            element={
+              <IntroduceSite
+                sites={{ [category]: sites[category] }}
+                title={category}
+              />
+            }
           />
         ))}
         <Route path="/permanent" element={<Permanent />} />

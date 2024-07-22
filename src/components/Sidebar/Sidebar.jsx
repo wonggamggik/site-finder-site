@@ -40,9 +40,9 @@ const Sidebar = () => {
       </a>
       <nav className="mt-8 flex flex-col space-y-1">
         <Link
-          to="/home"
+          to="/main"
           className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-            "/home"
+            "/main"
           )}`}
         >
           <MainPageIcon className="h-5 w-5 fill-gray-600" />

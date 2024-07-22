@@ -30,4 +30,7 @@
   box-sizing: border-box;
 }
 
-/* .lw_menu_item a.active 스타일 제거 */
+aside {
+  height: 100vh; /* 사이드바의 높이를 전체 화면 높이로 설정 */
+  overflow-y: auto; /* 내용이 많아질 경우 스크롤 가능하게 설정 */
+}
