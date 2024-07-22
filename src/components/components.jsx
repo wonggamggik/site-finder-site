@@ -45,26 +45,6 @@ function LayoutGridIcon(props) {
   );
 }
 
-function LineChartIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M3 3v18h18" />
-      <path d="m19 9-5 5-4-4-3 3" />
-    </svg>
-  );
-}
-
 function Package2Icon(props) {
   return (
     <svg
@@ -86,6 +66,29 @@ function Package2Icon(props) {
   );
 }
 
+/** LineChartIcon
+function LineChartIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 3v18h18" />
+      <path d="m19 9-5 5-4-4-3 3" />
+    </svg>
+  );
+}
+ */
+
+/** ShoppingCartIcon
 function ShoppingCartIcon(props) {
   return (
     <svg
@@ -106,7 +109,9 @@ function ShoppingCartIcon(props) {
     </svg>
   );
 }
+*/
 
+/** UsersIcon
 function UsersIcon(props) {
   return (
     <svg
@@ -128,8 +133,10 @@ function UsersIcon(props) {
     </svg>
   );
 }
+ */
 
-function XIcon(props) {
+/** XIcon
+ * function XIcon(props) {
   return (
     <svg
       {...props}
@@ -148,6 +155,7 @@ function XIcon(props) {
     </svg>
   );
 }
+*/
 
 export default function Component() {
   return (
@@ -171,27 +179,6 @@ export default function Component() {
           >
             <LayoutGridIcon className="h-5 w-5 fill-[#8d8d8d]" />
             Products
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-[#8d8d8d] transition-colors hover:bg-[#e0e0e0] hover:text-[#6d6d6d]"
-          >
-            <ShoppingCartIcon className="h-5 w-5 fill-[#8d8d8d]" />
-            Orders
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-[#8d8d8d] transition-colors hover:bg-[#e0e0e0] hover:text-[#6d6d6d]"
-          >
-            <UsersIcon className="h-5 w-5 fill-[#8d8d8d]" />
-            Customers
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-[#8d8d8d] transition-colors hover:bg-[#e0e0e0] hover:text-[#6d6d6d]"
-          >
-            <LineChartIcon className="h-5 w-5 fill-[#8d8d8d]" />
-            Analytics
           </a>
         </nav>
       </aside>
