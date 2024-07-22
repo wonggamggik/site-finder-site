@@ -1,14 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
-import sitesData from "../../data/sites.json"; // JSON 파일 import
+import { Link } from "react-router-dom";
+import sitesData from "../../data/sites.json";
 
 const Main = ({ title }) => {
   const [scrollable, setScrollable] = useState({});
   const scrollRefs = useRef({});
 
-  const allSites = Object.values(sitesData)
-    .map((category) => category.sites)
-    .flat();
+  // allSites에 category 정보를 포함하도록 수정
+  const allSites = Object.keys(sitesData).flatMap((category) =>
+    sitesData[category].sites.map((site) => ({ ...site, category }))
+  );
 
   useEffect(() => {
     const checkScrollable = () => {
@@ -76,22 +78,29 @@ const Main = ({ title }) => {
             className="flex space-x-4 overflow-x-auto scrollbar-hide scroll-smooth"
           >
             {allSites.map((site, idx) => (
-              <Card key={idx} className="bg-[#f5f5f5] flex-none w-80">
-                <CardImage
-                  src={site.image}
-                  alt={`${site.name} Image`}
-                  className="object-cover w-full rounded-t-lg aspect-video"
-                />
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-[#6d6d6d]">
-                    {site.name}
-                  </h3>
-                  <p className="text-sm text-[#8d8d8d]">
-                    {site.simpleDescription}
-                  </p>
-                  <CardTags tags={site.tags} />
-                </CardContent>
-              </Card>
+              <Link
+                to={`/introduce/${site.category}/${encodeURIComponent(
+                  site.name
+                )}`}
+                key={idx}
+              >
+                <Card className="bg-[#f5f5f5] flex-none w-80">
+                  <CardImage
+                    src={site.image}
+                    alt={`${site.name}`}
+                    className="object-cover w-full rounded-t-lg aspect-video"
+                  />
+                  <CardContent className="p-4">
+                    <h3 className="text-lg font-semibold text-[#6d6d6d]">
+                      {site.name}
+                    </h3>
+                    <p className="text-sm text-[#8d8d8d]">
+                      {site.simpleDescription}
+                    </p>
+                    <CardTags tags={site.tags} />
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -122,22 +131,29 @@ const Main = ({ title }) => {
             className="flex space-x-4 overflow-x-auto scrollbar-hide scroll-smooth"
           >
             {allSites.map((site, idx) => (
-              <Card key={idx} className="bg-[#f5f5f5] flex-none w-80">
-                <CardImage
-                  src={site.image}
-                  alt={`${site.name} Image`}
-                  className="object-cover w-full rounded-t-lg aspect-video"
-                />
-                <CardContent className="p-4">
-                  <h3 className="text-lg font-semibold text-[#6d6d6d]">
-                    {site.name}
-                  </h3>
-                  <p className="text-sm text-[#8d8d8d]">
-                    {site.simpleDescription}
-                  </p>
-                  <CardTags tags={site.tags} />
-                </CardContent>
-              </Card>
+              <Link
+                to={`/introduce/${site.category}/${encodeURIComponent(
+                  site.name
+                )}`}
+                key={idx}
+              >
+                <Card className="bg-[#f5f5f5] flex-none w-80">
+                  <CardImage
+                    src={site.image}
+                    alt={`${site.name}`}
+                    className="object-cover w-full rounded-t-lg aspect-video"
+                  />
+                  <CardContent className="p-4">
+                    <h3 className="text-lg font-semibold text-[#6d6d6d]">
+                      {site.name}
+                    </h3>
+                    <p className="text-sm text-[#8d8d8d]">
+                      {site.simpleDescription}
+                    </p>
+                    <CardTags tags={site.tags} />
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

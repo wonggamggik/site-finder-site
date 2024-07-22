@@ -1,23 +1,20 @@
 import React from "react";
-import { Card, CardContent } from "../Card/Card";
 
 const Permanent = () => {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <Card className="bg-[#e0e0e0]">
-        <img
-          src="/home-placeholder.svg"
-          alt="Temp Image"
-          width={400}
-          height={300}
-          className="object-cover w-full rounded-t-lg aspect-video"
-        />
-        <CardContent className="p-4">
-          <h3 className="text-lg font-semibold text-[#4a4a4a]">Temp</h3>
-          <p className="text-sm text-[#6d6d6d]">Temp</p>
-        </CardContent>
-      </Card>
-      {/* 다른 카드 컴포넌트들 추가 */}
+    <div className="flex flex-col items-center justify-center h-screen text-center">
+      <img
+        src="images/permanentVisual.png"
+        alt="Permanent Page Visual"
+        className="mb-6 w-64 h-auto"
+      />
+      <h1 className="text-3xl font-bold mb-4">
+        영구 페이지에 오신 것을 환영합니다!
+      </h1>
+      <p className="text-gray-600 mb-2">
+        이곳에서 영구적으로 보관된 중요한 정보를 확인할 수 있습니다.
+      </p>
+      <p className="text-gray-600">필요한 정보를 쉽게 찾고 활용하세요!</p>
     </div>
   );
 };

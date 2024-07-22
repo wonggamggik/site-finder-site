@@ -5,7 +5,7 @@ const Home = () => {
     <div className="flex flex-col items-center justify-center h-screen text-center">
       <img
         src="images/siteLogo.png"
-        alt="Example Image"
+        alt="Site Logo"
         className="mb-6 w-64 h-auto"
       />
       <h1 className="text-3xl font-bold mb-4">
