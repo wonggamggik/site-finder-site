@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MainPageIcon from "./icons/MainPageIcon";
+import SubPageIcon from "./icons/SubPageIcon";
 import TitleIcon from "./icons/TitleIcon";
 
 const Sidebar = () => {
@@ -17,6 +18,13 @@ const Sidebar = () => {
         >
           <MainPageIcon className="h-5 w-5 fill-[#8d8d8d]" />
           메인 페이지
+        </Link>
+        <Link
+          to="/introduce"
+          className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-[#8d8d8d] transition-colors hover:bg-[#e0e0e0] hover:text-[#6d6d6d]"
+        >
+          <SubPageIcon className="h-5 w-5 fill-[#8d8d8d]" />
+          사이트 소개
         </Link>
       </nav>
     </aside>
