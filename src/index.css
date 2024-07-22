@@ -59,3 +59,18 @@
 .active {
   @apply font-bold text-gray-700 bg-gray-200;
 }
+
+/* Custom scrollbar-hide class */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Group hover for the arrows */
+.group:hover .absolute {
+  opacity: 1 !important;
+}
