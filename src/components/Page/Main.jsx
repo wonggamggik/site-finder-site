@@ -6,7 +6,9 @@ const Main = ({ title }) => {
   const [scrollable, setScrollable] = useState({});
   const scrollRefs = useRef({});
 
-  const allSites = Object.values(sitesData).flat();
+  const allSites = Object.values(sitesData)
+    .map((category) => category.sites)
+    .flat();
 
   useEffect(() => {
     const checkScrollable = () => {
@@ -49,7 +51,7 @@ const Main = ({ title }) => {
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">{title}</h1>
       <div>
-        <h2 className="text-2xl font-semibold mb-4">가장 많이 사용한 사이트</h2>
+        <h2 className="text-2xl font-semibold mb-4">많이 사용한 사이트</h2>
         <div className="relative group">
           {scrollable.mostUsed && (
             <>

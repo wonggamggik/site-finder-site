@@ -4,7 +4,7 @@ import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
 
 const DetailPage = ({ sites }) => {
   const { category } = useParams();
-  const categorySites = sites[category] || [];
+  const categorySites = sites[category]?.sites || [];
 
   console.log("Category:", category);
   console.log("Sites:", sites);
@@ -12,7 +12,7 @@ const DetailPage = ({ sites }) => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">{category}</h1>
+      <h1 className="text-3xl font-bold mb-6">{sites[category]?.ko}</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {categorySites.map((site, idx) => (
           <Card key={idx} className="bg-[#f5f5f5]">

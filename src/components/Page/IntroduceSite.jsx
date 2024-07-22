@@ -51,7 +51,9 @@ const IntroduceSite = ({ sites, title }) => {
       <div className="space-y-8">
         {Object.keys(sites).map((category, index) => (
           <div key={index}>
-            <h2 className="text-2xl font-semibold mb-4">{category}</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              {sites[category].ko}
+            </h2>
             <div className="relative group">
               {scrollable[category] && (
                 <>
@@ -75,7 +77,7 @@ const IntroduceSite = ({ sites, title }) => {
                 ref={(el) => (scrollRefs.current[category] = el)}
                 className="flex space-x-4 overflow-x-auto scrollbar-hide scroll-smooth"
               >
-                {sites[category].map((site, idx) => (
+                {sites[category].sites.map((site, idx) => (
                   <Link to={`/introduce/${category}`} key={idx}>
                     <Card className="bg-[#f5f5f5] flex-none w-80">
                       <CardImage

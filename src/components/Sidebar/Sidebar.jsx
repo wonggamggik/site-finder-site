@@ -79,7 +79,7 @@ const Sidebar = () => {
                     `/introduce/${category}`
                   )}`}
                 >
-                  {category}
+                  {sitesData[category].ko}
                 </Link>
               </li>
             ))}
