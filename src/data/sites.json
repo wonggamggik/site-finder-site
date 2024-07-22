@@ -1,102 +1,108 @@
-[
-  {
-    "image": "https://pbs.twimg.com/profile_images/1711816706874540032/z07hmQEH_400x400.png",
-    "name": "v0",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of the example site.",
-    "features": ["Feature 1", "Feature 2", "Feature 3"],
-    "functions": ["Function 1", "Function 2"],
-    "link": "https://v0.dev/",
-    "tags": ["Tag1", "Tag2", "Tag3"]
-  },
-  {
-    "image": "https://i.pcmag.com/imagery/reviews/05GF8sMpHfawiyKgGnrgf7X-8..v1665503374.jpg",
-    "name": "canva",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://www.canva.com/ko_kr/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://img.fortawesome.com/1ce05b4b/open-graph-general.png",
-    "name": "fontawesome",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://fontawesome.com/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7P5jabImLCi_a_Xzwivl3ES6RcCqg2iUCA&s",
-    "name": "flatuicolors",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://flatuicolors.com/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://i0.wp.com/techneedle.com/wp-content/uploads/2014/05/pinterest-logo.jpg",
-    "name": "pinterest",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://www.pinterest.co.kr/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://collectui.com/img/facebook-share.png",
-    "name": "collectui",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://collectui.com/designs",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://up.wepick.kr/wp-content/uploads/2023/06/a-1-49.jpg",
-    "name": "notefolio",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://notefolio.net/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://yt3.googleusercontent.com/8llwBxXbYGiF9KLxbxc8DpW0UzxZQP8y11tmdFCGvn84BTof-aVd93DBVN4bAAqno5EVpIvm=s900-c-k-c0x00ffffff-no-rj",
-    "name": "reallygoodemails",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://reallygoodemails.com/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzZcZkHb1ryoSbKABkVp_5kVVOdb7dmN6R_Q&s",
-    "name": "flaticon",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://www.flaticon.com/kr/",
-    "tags": ["TagA", "TagB", "TagC"]
-  },
-  {
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXYPNyFGrvP-YqkjoLXlj3no-xP5Cv6M8EDg&s",
-    "name": "unsplash",
-    "simpleDescription": "This is a brief description of the example site.",
-    "description": "This is a brief description of another site.",
-    "features": ["Feature A", "Feature B", "Feature C"],
-    "functions": ["Function A", "Function B"],
-    "link": "https://unsplash.com/ko",
-    "tags": ["TagA", "TagB", "TagC"]
-  }
-]
+{
+  "개발": [
+    {
+      "image": "https://pbs.twimg.com/profile_images/1711816706874540032/z07hmQEH_400x400.png",
+      "name": "v0",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of the example site.",
+      "features": ["Feature 1", "Feature 2", "Feature 3"],
+      "functions": ["Function 1", "Function 2"],
+      "link": "https://v0.dev/",
+      "tags": ["Tag1", "Tag2", "Tag3"]
+    }
+  ],
+  "디자인": [
+    {
+      "image": "https://i.pcmag.com/imagery/reviews/05GF8sMpHfawiyKgGnrgf7X-8..v1665503374.jpg",
+      "name": "canva",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://www.canva.com/ko_kr/",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://img.fortawesome.com/1ce05b4b/open-graph-general.png",
+      "name": "fontawesome",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://fontawesome.com/",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7P5jabImLCi_a_Xzwivl3ES6RcCqg2iUCA&s",
+      "name": "flatuicolors",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://flatuicolors.com/",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://i0.wp.com/techneedle.com/wp-content/uploads/2014/05/pinterest-logo.jpg",
+      "name": "pinterest",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://www.pinterest.co.kr/",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://collectui.com/img/facebook-share.png",
+      "name": "collectui",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://collectui.com/designs",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://up.wepick.kr/wp-content/uploads/2023/06/a-1-49.jpg",
+      "name": "notefolio",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://notefolio.net/",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://yt3.googleusercontent.com/8llwBxXbYGiF9KLxbxc8DpW0UzxZQP8y11tmdFCGvn84BTof-aVd93DBVN4bAAqno5EVpIvm=s900-c-k-c0x00ffffff-no-rj",
+      "name": "reallygoodemails",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://reallygoodemails.com/",
+      "tags": ["TagA", "TagB", "TagC"]
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzZcZkHb1ryoSbKABkVp_5kVVOdb7dmN6R_Q&s",
+      "name": "flaticon",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://www.flaticon.com/kr/",
+      "tags": ["TagA", "TagB", "TagC"]
+    }
+  ],
+  "사진": [
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXYPNyFGrvP-YqkjoLXlj3no-xP5Cv6M8EDg&s",
+      "name": "unsplash",
+      "simpleDescription": "This is a brief description of the example site.",
+      "description": "This is a brief description of another site.",
+      "features": ["Feature A", "Feature B", "Feature C"],
+      "functions": ["Function A", "Function B"],
+      "link": "https://unsplash.com/ko",
+      "tags": ["TagA", "TagB", "TagC"]
+    }
+  ]
+}
