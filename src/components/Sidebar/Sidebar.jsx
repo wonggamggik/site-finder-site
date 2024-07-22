@@ -35,15 +35,15 @@ const Sidebar = () => {
 
   return (
     <aside className="hidden w-64 flex-col border-r bg-gray-100 p-6 sm:flex">
-      <a href="#" className="flex items-center gap-2 font-semibold">
+      <a href="/" className="flex items-center gap-2 font-semibold">
         <TitleIcon className="h-6 w-6 fill-gray-600" />
         <span className="text-gray-600">Site-Find-Site</span>
       </a>
       <nav className="mt-8 flex flex-col space-y-1">
         <Link
-          to="/"
+          to="/main"
           className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-            "/"
+            "/main"
           )}`}
         >
           <MainPageIcon className="h-5 w-5 fill-gray-600" />
