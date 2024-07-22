@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "../Card/Card";
 
-const Temp = () => {
+const Permanent = () => {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <Card className="bg-[#e0e0e0]">
@@ -22,4 +22,4 @@ const Temp = () => {
   );
 };
 
-export default Temp;
+export default Permanent;

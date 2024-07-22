@@ -4,12 +4,14 @@ import MainPageIcon from "./icons/MainPageIcon";
 import SubPageIcon from "./icons/SubPageIcon";
 import TitleIcon from "./icons/TitleIcon";
 import UsersIcon from "./icons/UsersIcon";
-import "./Sidebar.css"; // Sidebar.css 파일을 불러옵니다
+import "./Sidebar.css";
+import sitesData from "../../data/sites.json"; // JSON 파일 import
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const contentRef = useRef(null);
   const location = useLocation();
+  const categories = Object.keys(sitesData);
 
   const handleArrowClick = (e) => {
     e.preventDefault();
@@ -27,9 +29,6 @@ const Sidebar = () => {
   }, [open]);
 
   const isActiveLink = (path) => {
-    if (path === "/") {
-      return location.pathname === path ? "active" : "";
-    }
     return location.pathname.startsWith(path) ? "active" : "";
   };
 
@@ -41,9 +40,9 @@ const Sidebar = () => {
       </a>
       <nav className="mt-8 flex flex-col space-y-1">
         <Link
-          to="/main"
+          to="/home"
           className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-            "/main"
+            "/home"
           )}`}
         >
           <MainPageIcon className="h-5 w-5 fill-gray-600" />
@@ -72,42 +71,24 @@ const Sidebar = () => {
             className="mt-2 pl-6 overflow-hidden transition-max-height"
             style={{ maxHeight: "0px" }}
           >
-            <li className="lw_menu_item">
-              <Link
-                to="/introduce/subpage1"
-                className={`block py-1 text-sm font-medium transition-colors hover:text-gray-500 ${isActiveLink(
-                  "/introduce/subpage1"
-                )}`}
-              >
-                서브 페이지 1
-              </Link>
-            </li>
-            <li className="lw_menu_item">
-              <Link
-                to="/introduce/subpage2"
-                className={`block py-1 text-sm font-medium transition-colors hover:text-gray-500 ${isActiveLink(
-                  "/introduce/subpage2"
-                )}`}
-              >
-                서브 페이지 2
-              </Link>
-            </li>
-            <li className="lw_menu_item">
-              <Link
-                to="/introduce/subpage3"
-                className={`block py-1 text-sm font-medium transition-colors hover:text-gray-500 ${isActiveLink(
-                  "/introduce/subpage3"
-                )}`}
-              >
-                서브 페이지 3
-              </Link>
-            </li>
+            {categories.map((category) => (
+              <li className="lw_menu_item" key={category}>
+                <Link
+                  to={`/${category}`}
+                  className={`block py-1 text-sm font-medium transition-colors hover:text-gray-500 ${isActiveLink(
+                    `/${category}`
+                  )}`}
+                >
+                  {category}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <Link
-          to="/temp"
+          to="/permanent"
           className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-            "/temp"
+            "/permanent"
           )}`}
         >
           <UsersIcon className="h-5 w-5 fill-gray-600" />
