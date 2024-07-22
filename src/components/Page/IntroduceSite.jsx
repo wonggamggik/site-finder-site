@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
+import { Link } from "react-router-dom";
 
 const IntroduceSite = ({ sites, title }) => {
   const [scrollable, setScrollable] = useState({});
@@ -75,22 +76,24 @@ const IntroduceSite = ({ sites, title }) => {
                 className="flex space-x-4 overflow-x-auto scrollbar-hide scroll-smooth"
               >
                 {sites[category].map((site, idx) => (
-                  <Card key={idx} className="bg-[#f5f5f5] flex-none w-80">
-                    <CardImage
-                      src={site.image}
-                      alt={`${site.name} Image`}
-                      className="object-cover w-full rounded-t-lg aspect-video"
-                    />
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-semibold text-[#6d6d6d]">
-                        {site.name}
-                      </h3>
-                      <p className="text-sm text-[#8d8d8d]">
-                        {site.simpleDescription}
-                      </p>
-                      <CardTags tags={site.tags} />
-                    </CardContent>
-                  </Card>
+                  <Link to={`/introduce/${category}`} key={idx}>
+                    <Card className="bg-[#f5f5f5] flex-none w-80">
+                      <CardImage
+                        src={site.image}
+                        alt={`${site.name} Image`}
+                        className="object-cover w-full rounded-t-lg aspect-video"
+                      />
+                      <CardContent className="p-4">
+                        <h3 className="text-lg font-semibold text-[#6d6d6d]">
+                          {site.name}
+                        </h3>
+                        <p className="text-sm text-[#8d8d8d]">
+                          {site.simpleDescription}
+                        </p>
+                        <CardTags tags={site.tags} />
+                      </CardContent>
+                    </Card>
+                  </Link>
                 ))}
               </div>
             </div>

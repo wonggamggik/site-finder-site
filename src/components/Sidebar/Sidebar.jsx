@@ -74,9 +74,9 @@ const Sidebar = () => {
             {categories.map((category) => (
               <li className="lw_menu_item" key={category}>
                 <Link
-                  to={`/${category}`}
+                  to={`/introduce/${category}`}
                   className={`block py-1 text-sm font-medium transition-colors hover:text-gray-500 ${isActiveLink(
-                    `/${category}`
+                    `/introduce/${category}`
                   )}`}
                 >
                   {category}
