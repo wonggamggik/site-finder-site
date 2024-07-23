@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center">
       <img
-        src="images/siteLogo.png"
+        src="https://github.com/wonggamggik/developmentStorage/blob/main/SiteFindSite/siteLogo.png?raw=true"
         alt="Site Logo"
         className="mb-6 w-64 h-auto"
       />
