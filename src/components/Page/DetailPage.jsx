@@ -6,10 +6,6 @@ const DetailPage = ({ sites }) => {
   const { category } = useParams();
   const categorySites = sites[category]?.sites || [];
 
-  console.log("DetailPage sites:", sites);
-  console.log("DetailPage category:", category);
-  console.log("DetailPage categorySites:", categorySites);
-
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">{sites[category]?.ko}</h1>
@@ -22,7 +18,7 @@ const DetailPage = ({ sites }) => {
             <Card className="bg-[#f5f5f5]">
               <CardImage
                 src={site.image}
-                alt={`${site.name} Image`}
+                alt={`${site.name}`}
                 className="object-cover w-full rounded-t-lg aspect-video"
               />
               <CardContent className="p-4">

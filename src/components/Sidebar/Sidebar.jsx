@@ -5,13 +5,22 @@ import SubPageIcon from "./icons/SubPageIcon";
 import TitleIcon from "./icons/TitleIcon";
 import UsersIcon from "./icons/UsersIcon";
 import "./Sidebar.css";
-import sitesData from "../../data/sites.json"; // JSON 파일 import
+import { fetchSitesData } from "../../utils/fetchData";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  const [categories, setCategories] = useState([]);
   const contentRef = useRef(null);
   const location = useLocation();
-  const categories = Object.keys(sitesData);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const sitesData = await fetchSitesData();
+      setCategories(Object.keys(sitesData));
+    };
+
+    fetchData();
+  }, []);
 
   const handleArrowClick = (e) => {
     e.preventDefault();
@@ -79,7 +88,7 @@ const Sidebar = () => {
                     `/introduce/${category}`
                   )}`}
                 >
-                  {sitesData[category].ko}
+                  {category}
                 </Link>
               </li>
             ))}

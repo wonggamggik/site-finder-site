@@ -2,8 +2,12 @@
 
 # dependencies
 /node_modules
+firestore-data-upload/serviceAccountKey.json
+firestore-data-upload/uploadData.js
+firestore-data-upload/
 /.pnp
 .pnp.js
+.env
 
 # testing
 /coverage

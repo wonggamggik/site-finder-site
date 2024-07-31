@@ -87,7 +87,7 @@ const IntroduceSite = ({ sites, title }) => {
                     <Card className="bg-[#f5f5f5] flex-none w-80">
                       <CardImage
                         src={site.image}
-                        alt={`${site.name} Image`}
+                        alt={`${site.name}`}
                         className="object-cover w-full rounded-t-lg aspect-video"
                       />
                       <CardContent className="p-4">

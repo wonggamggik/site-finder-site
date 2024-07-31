@@ -6,8 +6,8 @@ import Main from "./components/Page/Main";
 import IntroduceSite from "./components/Page/IntroduceSite";
 import DetailPage from "./components/Page/DetailPage";
 import DetailSite from "./components/Page/DetailSite";
-import sitesData from "./data/sites.json";
 import Permanent from "./components/Page/Permanent";
+import { fetchSitesData } from "./utils/fetchData";
 
 function App() {
   const [sites, setSites] = useState({});
@@ -15,6 +15,7 @@ function App() {
   useEffect(() => {
     const fetchSites = async () => {
       try {
+        const sitesData = await fetchSitesData();
         setSites(sitesData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -36,7 +37,7 @@ function App() {
         {Object.keys(sites).map((category) => (
           <Route
             key={category}
-            path={`/introduce/:category`}
+            path={`/introduce/${category}`}
             element={<DetailPage sites={sites} />}
           />
         ))}
@@ -44,7 +45,7 @@ function App() {
           sites[category].sites.map((site) => (
             <Route
               key={site.name}
-              path={`/introduce/:category/:siteName`}
+              path={`/introduce/${category}/${site.name}`}
               element={<DetailSite sites={sites} />}
             />
           ))

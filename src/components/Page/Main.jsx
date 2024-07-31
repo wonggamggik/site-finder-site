@@ -1,16 +1,24 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
 import { Link } from "react-router-dom";
-import sitesData from "../../data/sites.json";
+import { fetchSitesData } from "../../utils/fetchData";
 
 const Main = ({ title }) => {
   const [scrollable, setScrollable] = useState({});
+  const [allSites, setAllSites] = useState([]);
   const scrollRefs = useRef({});
 
-  // allSites에 category 정보를 포함하도록 수정
-  const allSites = Object.keys(sitesData).flatMap((category) =>
-    sitesData[category].sites.map((site) => ({ ...site, category }))
-  );
+  useEffect(() => {
+    const fetchData = async () => {
+      const sitesData = await fetchSitesData();
+      const sitesArray = Object.keys(sitesData).flatMap((category) =>
+        sitesData[category].sites.map((site) => ({ ...site, category }))
+      );
+      setAllSites(sitesArray);
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const checkScrollable = () => {
@@ -36,7 +44,7 @@ const Main = ({ title }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [allSites]);
 
   const scroll = (section, direction) => {
     const ref = scrollRefs.current[section];
