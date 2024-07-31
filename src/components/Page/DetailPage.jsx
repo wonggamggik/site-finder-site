@@ -4,11 +4,24 @@ import { Card, CardImage, CardContent, CardTags } from "../Card/Card";
 
 const DetailPage = ({ sites }) => {
   const { category } = useParams();
-  const categorySites = sites[category]?.sites || [];
+
+  console.log("Category from params:", category);
+  console.log("Sites data:", sites);
+
+  if (!category) {
+    return <div className="container mx-auto p-6">Category not found</div>;
+  }
+
+  const categoryData = sites[category];
+  const categorySites = categoryData?.sites || [];
+
+  if (!categoryData) {
+    return <div className="container mx-auto p-6">Category not found</div>;
+  }
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">{sites[category]?.ko}</h1>
+      <h1 className="text-3xl font-bold mb-6">{categoryData.ko}</h1>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {categorySites.map((site, idx) => (
           <Link

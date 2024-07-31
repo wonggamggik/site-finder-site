@@ -37,7 +37,7 @@ function App() {
         {Object.keys(sites).map((category) => (
           <Route
             key={category}
-            path={`/introduce/${category}`}
+            path={`/introduce/:category`}
             element={<DetailPage sites={sites} />}
           />
         ))}
@@ -45,7 +45,7 @@ function App() {
           sites[category].sites.map((site) => (
             <Route
               key={site.name}
-              path={`/introduce/${category}/${site.name}`}
+              path={`/introduce/:category/:siteName`}
               element={<DetailSite sites={sites} />}
             />
           ))
