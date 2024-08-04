@@ -1,128 +1,14 @@
-// import React, { useState, useRef, useEffect } from "react";
-// import { Link, useLocation } from "react-router-dom";
-// import MainPageIcon from "./icons/MainPageIcon";
-// import SubPageIcon from "./icons/SubPageIcon";
-// import TitleIcon from "./icons/TitleIcon";
-// import UsersIcon from "./icons/UsersIcon";
-// import "./Sidebar.css";
-// import { fetchSitesData } from "../../utils/fetchData";
-
-// const Sidebar = () => {
-//   const [open, setOpen] = useState(false);
-//   const [categories, setCategories] = useState([]);
-//   const contentRef = useRef(null);
-//   const location = useLocation();
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const sitesData = await fetchSitesData();
-//       setCategories(Object.keys(sitesData));
-//     };
-
-//     fetchData();
-//   }, []);
-
-//   const handleArrowClick = (e) => {
-//     e.preventDefault();
-//     setOpen(!open);
-//   };
-
-//   useEffect(() => {
-//     if (contentRef.current) {
-//       if (open) {
-//         contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
-//       } else {
-//         contentRef.current.style.maxHeight = "0px";
-//       }
-//     }
-//   }, [open]);
-
-//   const isActiveLink = (path) => {
-//     return location.pathname === path ? "active" : "";
-//   };
-
-//   return (
-//     <aside className="hidden w-64 flex-col border-r bg-gray-100 p-6 sm:flex">
-//       <a href="/" className="flex items-center gap-2 font-semibold">
-//         <TitleIcon className="h-6 w-6 fill-gray-600" />
-//         <span className="text-gray-600">Site-Find-Site</span>
-//       </a>
-//       <nav className="mt-8 flex flex-col space-y-1">
-//         <Link
-//           to="/main"
-//           className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-//             "/main"
-//           )}`}
-//         >
-//           <MainPageIcon className="h-5 w-5 fill-gray-600" />
-//           메인 페이지
-//         </Link>
-//         <div className="relative">
-//           <Link
-//             to="/introduce"
-//             className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-//               "/introduce"
-//             )}`}
-//           >
-//             <SubPageIcon className="h-5 w-5 fill-gray-600" />
-//             사이트 소개
-//           </Link>
-//           <span
-//             className={`absolute right-3 top-2 cursor-pointer transform transition-transform ${
-//               open ? "rotate-180" : ""
-//             }`}
-//             onClick={handleArrowClick}
-//           >
-//             ▼
-//           </span>
-//           <ul
-//             ref={contentRef}
-//             className="mt-2 pl-6 overflow-hidden transition-max-height"
-//             style={{ maxHeight: "0px" }}
-//           >
-//             {categories.map((category) => (
-//               <li className="lw_menu_item" key={category}>
-//                 <Link
-//                   to={`/introduce/${category}`}
-//                   className={`block py-1 text-sm font-medium transition-colors hover:text-gray-500 ${isActiveLink(
-//                     `/introduce/${category}`
-//                   )}`}
-//                 >
-//                   {category}
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//         <Link
-//           to="/permanent"
-//           className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-//             "/permanent"
-//           )}`}
-//         >
-//           <UsersIcon className="h-5 w-5 fill-gray-600" />
-//           임시 페이지
-//         </Link>
-//       </nav>
-//     </aside>
-//   );
-// };
-
-// export default Sidebar;
-
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import MainPageIcon from "./icons/MainPageIcon";
 import SubPageIcon from "./icons/SubPageIcon";
 import TitleIcon from "./icons/TitleIcon";
-import UsersIcon from "./icons/UsersIcon";
-import "./Sidebar.css";
 import { fetchSitesData } from "../../utils/fetchData";
 
 const Sidebar = () => {
-  const [open, setOpen] = useState(false);
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [categories, setCategories] = useState([]);
-  const contentRef = useRef(null);
+  const subMenuRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -138,27 +24,25 @@ const Sidebar = () => {
     fetchData();
   }, []);
 
-  const handleArrowClick = (e) => {
-    e.preventDefault();
-    setOpen(!open);
-  };
-
   useEffect(() => {
-    if (contentRef.current) {
-      if (open) {
-        contentRef.current.style.maxHeight = `${contentRef.current.scrollHeight}px`;
-      } else {
-        contentRef.current.style.maxHeight = "0px";
-      }
+    if (subMenuRef.current) {
+      subMenuRef.current.style.maxHeight = subMenuOpen
+        ? `${subMenuRef.current.scrollHeight}px`
+        : "0px";
     }
-  }, [open]);
+  }, [subMenuOpen]);
+
+  const handleToggleSubMenu = (e) => {
+    e.preventDefault();
+    setSubMenuOpen(!subMenuOpen);
+  };
 
   const isActiveLink = (path) => {
     return location.pathname === path ? "active" : "";
   };
 
   return (
-    <aside className="hidden w-64 flex-col border-r bg-gray-100 p-6 sm:flex">
+    <aside className="fixed top-0 left-0 h-screen bg-sidebar_color p-6 transition-transform transform w-64">
       <a href="/" className="flex items-center gap-2 font-semibold">
         <TitleIcon className="h-6 w-6 fill-gray-600" />
         <span className="text-gray-600">Site-Find-Site</span>
@@ -174,27 +58,32 @@ const Sidebar = () => {
           메인 페이지
         </Link>
         <div className="relative">
-          <Link
-            to="/introduce"
-            className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-              "/introduce"
-            )}`}
-          >
-            <SubPageIcon className="h-5 w-5 fill-gray-600" />
-            사이트 소개
-          </Link>
-          <span
-            className={`absolute right-3 top-2 cursor-pointer transform transition-transform ${
-              open ? "rotate-180" : ""
-            }`}
-            onClick={handleArrowClick}
-          >
-            ▼
-          </span>
+          <div className="flex items-center justify-between">
+            <Link
+              to="/introduce"
+              className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
+                "/introduce"
+              )}`}
+            >
+              <SubPageIcon className="h-5 w-5 fill-gray-600" />
+              사이트 소개
+            </Link>
+            <button
+              onClick={handleToggleSubMenu}
+              className="transform transition-transform"
+              aria-label="Toggle submenu"
+            >
+              <span className={`${subMenuOpen ? "rotate-180" : ""}`}>▼</span>
+            </button>
+          </div>
           <ul
-            ref={contentRef}
-            className="mt-2 pl-6 overflow-hidden transition-max-height"
-            style={{ maxHeight: "0px" }}
+            ref={subMenuRef}
+            className="mt-2 pl-6 overflow-hidden transition-max-height duration-300"
+            style={{
+              maxHeight: subMenuOpen
+                ? `${subMenuRef.current.scrollHeight}px`
+                : "0px",
+            }}
           >
             {categories.map((category) => (
               <li className="lw_menu_item" key={category.key}>
@@ -210,15 +99,6 @@ const Sidebar = () => {
             ))}
           </ul>
         </div>
-        <Link
-          to="/permanent"
-          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-200 hover:text-gray-500 ${isActiveLink(
-            "/permanent"
-          )}`}
-        >
-          <UsersIcon className="h-5 w-5 fill-gray-600" />
-          임시 페이지
-        </Link>
       </nav>
     </aside>
   );

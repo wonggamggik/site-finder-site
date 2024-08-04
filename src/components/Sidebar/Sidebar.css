@@ -7,38 +7,36 @@
   transition: max-height 0.3s ease-in-out;
 }
 
-/* 일반 링크 스타일 */
 .lw_menu_item a {
   display: block;
   padding: 0.5rem;
   text-decoration: none;
   color: #8d8d8d;
-  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
   box-sizing: border-box;
   position: relative; /* 추가: 의사 요소를 위한 상대 위치 */
 }
 
-/* 활성화된 링크 스타일 */
-.lw_menu_item a.active {
-  font-weight: bold;
-  color: #4a4a4a;
-  background-color: #e0e0e0;
+.lw_menu_item a:hover::before {
+  content: "";
+  display: block;
+  height: calc(100% - 4px); /* 테두리 두께를 고려하여 조정 */
+  width: calc(100% - 4px); /* 테두리 두께를 고려하여 조정 */
+  border: 3px solid #111111; /* 테두리 두께 */
+  border-radius: 0px; /* 둥근 테두리 */
+  position: absolute;
+  top: 2px; /* 테두리 두께를 고려하여 조정 */
+  left: 2px; /* 테두리 두께를 고려하여 조정 */
+  box-sizing: border-box;
 }
 
-/* 일반 링크의 hover 스타일 */
-.lw_menu_item a:hover {
-  color: #4a4a4a;
-  background-color: #f0f0f0;
-}
-
-/* Sidebar 전체 스타일 */
+/* Sidebar.css */
 aside {
   height: 100vh; /* 사이드바의 높이를 전체 화면 높이로 설정 */
   overflow-y: auto; /* 내용이 많아질 경우 스크롤 가능하게 설정 */
   user-select: none; /* 드래그 방지 */
-}
-
-/* 링크 간격 통일 */
-nav a {
-  margin-bottom: 0.5rem; /* 링크 사이의 간격을 동일하게 설정 */
+  position: fixed; /* 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 16rem; /* 사이드바 너비 */
 }

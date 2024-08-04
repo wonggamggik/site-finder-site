@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./layouts/Layout";
@@ -6,7 +7,6 @@ import Main from "./components/Page/Main";
 import IntroduceSite from "./components/Page/IntroduceSite";
 import DetailPage from "./components/Page/DetailPage";
 import DetailSite from "./components/Page/DetailSite";
-import Permanent from "./components/Page/Permanent";
 import { fetchSitesData } from "./utils/fetchData";
 
 function App() {
@@ -50,7 +50,6 @@ function App() {
             />
           ))
         )}
-        <Route path="/permanent" element={<Permanent />} />
       </Routes>
     </Layout>
   );

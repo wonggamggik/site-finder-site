@@ -3,7 +3,7 @@ import React from "react";
 export const Card = ({ children, className }) => {
   return (
     <div
-      className={`bg-white rounded-lg overflow-hidden border border-gray-300 ${className}`}
+      className={`bg-white rounded-lg overflow-hidden border border-gray-300 ${className} h-full`}
     >
       {children}
     </div>
@@ -11,7 +11,14 @@ export const Card = ({ children, className }) => {
 };
 
 export const CardImage = ({ src, alt }) => {
-  return <img className="w-full h-48 object-cover" src={src} alt={alt} />;
+  return (
+    <img
+      className="w-full object-cover"
+      style={{ height: "200px" }}
+      src={src}
+      alt={alt}
+    />
+  );
 };
 
 export const CardContent = ({ children, className }) => {

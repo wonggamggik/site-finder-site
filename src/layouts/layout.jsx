@@ -1,12 +1,11 @@
 import React from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
-import "../index.css";
 
 const Layout = ({ children }) => {
   return (
-    <div lang="en" className="antialiased flex h-screen">
+    <div className="flex">
       <Sidebar />
-      <div className="flex-1 p-6 sm:p-8 overflow-auto">{children}</div>
+      <div className="flex-grow p-6 sm:ml-64 bg-custom_color">{children}</div>
     </div>
   );
 };
